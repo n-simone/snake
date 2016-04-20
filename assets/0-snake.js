@@ -213,5 +213,5 @@ window.addEventListener('keydown', function (e) {
     }
 }, false);
 
-var process = setInterval(update, 100);
+var process = setInterval(update, 125);
 
