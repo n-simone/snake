@@ -99,21 +99,19 @@ Snake.prototype.update = function ()
                 offsetx = x * canvas.width / WIDTH + SIZE / 10;
                 offsety = y * canvas.height / HEIGHT + SIZE / 10;
 
-                if (this.grid[x][y] < this.length) {
-                    if ( (x < WIDTH - 1) && (this.grid[x+1][y] == this.grid[x][y]+1) ) {
-                        width += SIZE / 5;
-                    }
-                    else if ( (x > 0 ) && (this.grid[x-1][y] == this.grid[x][y]+1) ) {
-                        width += SIZE / 5;
-                        offsetx -= SIZE / 5;
-                    }
-                    else if ( (y < HEIGHT - 1) && (this.grid[x][y+1] == this.grid[x][y]+1) ) {
-                        height += SIZE / 5;
-                    }
-                    else if ( (y > 0) && (this.grid[x][y-1] == this.grid[x][y]+1) ) {
-                        height += SIZE / 5;
-                        offsety -= SIZE / 5;
-                    }
+                if ( (x < WIDTH - 1) && (this.grid[x+1][y] == this.grid[x][y]+1) ) {
+                    width += SIZE / 5;
+                }
+                else if ( (x > 0 ) && (this.grid[x-1][y] == this.grid[x][y]+1) ) {
+                    width += SIZE / 5;
+                    offsetx -= SIZE / 5;
+                }
+                else if ( (y < HEIGHT - 1) && (this.grid[x][y+1] == this.grid[x][y]+1) ) {
+                    height += SIZE / 5;
+                }
+                else if ( (y > 0) && (this.grid[x][y-1] == this.grid[x][y]+1) ) {
+                    height += SIZE / 5;
+                    offsety -= SIZE / 5;
                 }
 
                 ctx.fillRect(Math.floor(offsetx), Math.floor(offsety), Math.floor(width), Math.floor(height));
@@ -158,13 +156,6 @@ Snake.prototype.turn = function(direction)
             break;
         default:
             console.log('WARNING: not a valid direction');
-    }
-}
-
-Snake.prototype.pathfind = function() {
-    for (var x = 0; x < WIDTH; x++) {
-        for (var y = 0; y < HEIGHT; y++) {
-        }
     }
 }
 
